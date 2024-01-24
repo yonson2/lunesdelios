@@ -41,16 +41,37 @@
 
 		.cursor {
 			animation: blink 1s infinite;
-			/* Adjust the duration as needed */
 		}
 
 		.backdrop {
 			backdrop-filter: blur(6px);
 		}
+
+		.grayscale {
+			transition: filter 0.5s ease;
+		}
+		.grayscale.img {
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
+		}
+
+		
+    .grayscale:hover,
+    .grayscale.tapped {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
+
+    @media (hover: none) {
+      .grayscale:hover {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+      }
+    }
 	</style>
 	<script src="https://unpkg.com/fireworks-js@2.x/dist/index.umd.js"></script>
-  <script type="module" crossorigin src="/assets/index-AkVt16h3.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-LEU4BfVh.css">
+  <script type="module" crossorigin src="/assets/index-xYL7Ns8f.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-RG5Ehzq1.css">
 </head>
 
 <body class="bg-gray-900">
@@ -59,8 +80,8 @@
 		<section class="bg-gray-900 w-full mx-auto rounded-lg">
 			<section id="main" class="h-screen mb-4 bg-gray-900">
 				<div id="pinned-content">
-					<div class="pt-6 z-2 relative">
-						<p id="headerTitle" class="text-center announcement text-4xl text-indigo-400">
+					<div class="pt-6">
+						<p id="headerTitle" class="text-center announcement text-6xl text-indigo-400 relative">
 							<span class="typewriter"></span>
 							<span class="cursor">|</span>
 						</p>
@@ -72,14 +93,14 @@
 			</section>
 
 			<section class="h-screen bg-gray-800">
-				<div class="backdrop z-1 relative">
+				<div class="h-full backdrop z-1 relative">
 					<div class="py-6">
 						<p id="headerTitle" class="text-center announcement text-3xl">
 						4+1?
 						</p>
 					</div>
 					<div id="red" class="mx-auto z-3 relative py-8">
-						<div id="white" class="flex overflow-hidden mx-auto gap-4 inline-block">
+						<div id="white" class="flex overflow-hidden mx-auto gap-4 inline-block grayscale">
 							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/01.jpg">
 							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/02.jpg">
 							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/03.jpg">
