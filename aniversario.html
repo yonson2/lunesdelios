@@ -10,8 +10,6 @@
 		canvas {
 			opacity: 0;
 			transition: opacity 1s ease-in-out;
-			height: 500px;
-			width: 500px;
 		}
 
 		.announcement {
@@ -46,32 +44,11 @@
 		.backdrop {
 			backdrop-filter: blur(6px);
 		}
-
-		.grayscale {
-			transition: filter 0.5s ease;
-		}
-		.grayscale.img {
-			-webkit-filter: grayscale(100%);
-			filter: grayscale(100%);
-		}
-
-		
-    .grayscale:hover,
-    .grayscale.tapped {
-      -webkit-filter: grayscale(0%);
-      filter: grayscale(0%);
-    }
-
-    @media (hover: none) {
-      .grayscale:hover {
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-      }
-    }
 	</style>
-	<script src="https://unpkg.com/fireworks-js@2.x/dist/index.umd.js"></script>
-  <script type="module" crossorigin src="/assets/index-xYL7Ns8f.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-RG5Ehzq1.css">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js"></script>
+  <script type="module" crossorigin src="/assets/index-BRvNxU7S.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Ebz6grTM.css">
 </head>
 
 <body class="bg-gray-900">
@@ -92,82 +69,119 @@
 				</div>
 			</section>
 
-			<section class="h-screen bg-gray-800">
+			<section class="min-h-screen bg-gray-800">
 				<div class="h-full backdrop z-1 relative">
 					<div class="py-6">
 						<p id="headerTitle" class="text-center announcement text-3xl">
-						4+1?
+							4+1?
 						</p>
 					</div>
-					<div id="red" class="mx-auto z-3 relative py-8">
-						<div id="white" class="flex overflow-hidden mx-auto gap-4 inline-block grayscale">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/01.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/02.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/03.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/04.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/01.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/02.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/03.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/04.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/01.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/02.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg" src="./images/03.jpg">
-							<img class="object-cover h-48 lg:h-72 rounded-lg pr-4" src="./images/04.jpg">
+					<div id="map-container" class="overflow-hidden">
+						<div class="mx-auto max-w-7xl px-6 lg:px-8">
+							<div
+								class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+								<div class="lg:pr-8 lg:pt-4">
+									<div class="lg:max-w-lg">
+										<h2 class="text-base font-semibold leading-7 text-indigo-400">Deploy faster</h2>
+										<p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">A better workflow</p>
+										<p class="mt-6 text-lg leading-8 text-gray-300">Lorem ipsum, dolor sit amet consectetur adipisicing
+											elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</p>
+										<dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
+											<div class="relative pl-9">
+												<dt class="inline font-semibold text-white">
+													<svg class="absolute left-1 top-1 h-5 w-5 text-indigo-500" width="512" height="512" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+														<path fill="currentColor" d="M19 18H5a4 4 0 0 1-4-4a8 8 0 0 1 8-8c1.06 0 2.07.21 3 .58c.93-.37 1.94-.58 3-.58a8 8 0 0 1 8 8a4 4 0 0 1-4 4M3 14a2 2 0 0 0 2 2a2 2 0 0 0 2-2c0-2.37 1.03-4.5 2.67-5.96L9 8a6 6 0 0 0-6 6m16 2a2 2 0 0 0 2-2a6 6 0 0 0-6-6a6 6 0 0 0-6 6c0 .73-.19 1.41-.54 2z"/>
+													</svg>
+													Primero unos tacos.
+												</dt>
+												<dd class="inline">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
+													perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
+											</div>
+											<div class="relative pl-9">
+												<dt class="inline font-semibold text-white">
+													<svg class="absolute left-1 top-1 h-5 w-5 text-indigo-500" width="576" height="512" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+														<path fill="currentColor" d="M296 464h-56V338.78l168.74-168.73c15.52-15.52 4.53-42.05-17.42-42.05H24.68c-21.95 0-32.94 26.53-17.42 42.05L176 338.78V464h-56c-22.09 0-40 17.91-40 40c0 4.42 3.58 8 8 8h240c4.42 0 8-3.58 8-8c0-22.09-17.91-40-40-40M432 0c-62.61 0-115.35 40.2-135.18 96h52.54c16.65-28.55 47.27-48 82.64-48c52.93 0 96 43.06 96 96s-43.07 96-96 96c-14.04 0-27.29-3.2-39.32-8.64l-35.26 35.26C379.23 279.92 404.59 288 432 288c79.53 0 144-64.47 144-144S511.53 0 432 0"/>
+													</svg>
+													Y después una copa.
+												</dt>
+												<dd class="inline">Conocemos los mejores gin-tonics de Madrid.</dd>
+											</div>
+										</dl>
+									</div>
+								</div>
+								<div class="pb-8">
+									<div class="relative pl-9 pb-4">
+										<dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
+											<dt class="inline font-semibold text-white">
+												<svg class="absolute left-1 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+													<path fill="currentColor" d="M16 18a5 5 0 1 1 5-5a5.006 5.006 0 0 1-5 5m0-8a3 3 0 1 0 3 3a3.003 3.003 0 0 0-3-3"/>
+													<path fill="currentColor" d="m16 30l-8.436-9.949a35.076 35.076 0 0 1-.348-.451A10.889 10.889 0 0 1 5 13a11 11 0 0 1 22 0a10.884 10.884 0 0 1-2.215 6.597l-.001.003s-.3.394-.345.447ZM8.813 18.395s.233.308.286.374L16 26.908l6.91-8.15c.044-.055.278-.365.279-.366A8.901 8.901 0 0 0 25 13a9 9 0 1 0-18 0a8.905 8.905 0 0 0 1.813 5.395"/>
+												</svg>
+												Aquí empieza todo.
+											</dt>
+											<dd class="inline">Quedamos en Mamba, C. de San Bernardo 53,  al lado del metro Noviciado. Nos vemos a partir de las 20:30</dd>
+										</dl>
+									</div>
+									<div id="map" class="rounded-lg h-96"></div>
+								</div>
+							</div>
 						</div>
-					</div>
-
-					<div id="hero-speech" class="mx-auto max-w-2xl sm:text-center z-3 relative pt-32">
-						<h2 class="text-base font-semibold leading-7 text-indigo-400">Everything you need</h2>
-						<p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">No server? No problem.</p>
-						<p class="mt-6 text-lg leading-8 text-gray-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-						Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis.</p>
 					</div>
 				</div>
 			</section>
 
-			<section id="last-section" class="h-screen bg-gray-900">
-				<div id="prize-form" class="bg-gray-900 mx-auto max-w-xl pt-48">
-					<div class="px-4 pt-5 sm:p-6">
-						<h3 class="text-lg font-medium leading-6 text-gray-300">Tienes una papeleta?</h3>
-						<div class="mt-2 max-w-xl text-sm text-gray-400">
-							<p>Introduce tu número y comprueba tu premio.</p>
-						</div>
-						<form class="mt-5 sm:flex sm:items-end">
-							<div class="w-full sm:max-w-xs sm:flex sm:items-center mb-4">
-								<select id="location" name="location"
-									class="w-full sm:w-auto rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-300 ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-gray-800">
-									<option class="text-gray-900">United States</option>
-									<option selected class="text-gray-900">Canada</option>
-									<option class="text-gray-900">Mexico</option>
-								</select>
-								<div class="w-full mt-3 sm:mt-0 sm:w-auto sm:ml-3">
-									<button type="button" onclick="processForm()"
-										class="w-full inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm">Comprobar</button>
+			<section id="last-section" class="min-h-screen max-h-screen bg-gray-900">
+							<div
+								class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+								<div id="prize-form" class="bg-gray-900 mx-auto max-w-xl pt-48">
+									<div class="px-4 pt-5 sm:p-6">
+										<h3 class="text-lg font-medium leading-6 text-gray-300">Tienes una papeleta?</h3>
+										<div class="mt-2 max-w-xl text-sm text-gray-400">
+											<p>Introduce tu número y comprueba tu premio.</p>
+										</div>
+										<form class="mt-5 sm:flex sm:items-end">
+											<div class="w-full sm:max-w-xs sm:flex sm:items-center mb-4">
+												<select id="location" name="location"
+																							class="w-full sm:w-auto rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-300 ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-gray-800">
+													<option class="text-gray-900">United States</option>
+													<option selected class="text-gray-900">Canada</option>
+													<option class="text-gray-900">Mexico</option>
+												</select>
+												<div class="w-full mt-3 sm:mt-0 sm:w-auto sm:ml-3">
+													<button type="button" onclick="processForm()"
+																								class="w-full inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm">Comprobar</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div id="premio" class="bg-gray-900 mx-auto max-w-xl pt-36 rounded-lg">
+									<img class="h-48 rounded-lg" src="images/premio-gorra.png">
 								</div>
 							</div>
-						</form>
-					</div>
-				</div>
 			</section>
 		</section>
 	</div>
+	<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
 	<script>
-		const container = document.querySelector('#last-section')
-		const fireworks = new Fireworks.default(container, {
-			sound: {
-				enabled: true, files: [
-					'02.mp3',
-					'03.mp3',
-				],
-				volume: {
-					min: 8,
-					max: 8,
-				},
-			}
-		})
-		function processForm() {
-			fireworks.start();
-		}
+		mapboxgl.accessToken = 'pk.eyJ1IjoieW9uc29uMiIsImEiOiJjbHJzMGY2ZnAwMXU1MmttNnd2MWwxbXppIn0.j7S6tS9q4nEFDzzvy2WFuA';
+		const mapboxClient = mapboxSdk({accessToken: mapboxgl.accessToken});
+		document.addEventListener('DOMContentLoaded', function () {
+			var map = new mapboxgl.Map({
+				container: 'map',
+				style: 'mapbox://styles/mapbox/streets-v12',
+				center: [-3.7070750953916014, 40.425761511712224],
+				zoom: 16,
+				interactive: false,
+			});
+
+			// Add a marker at the specified location
+			new mapboxgl.Marker().setLngLat([-3.7070750953916014, 40.425761511712224]).addTo(map);
+
+			window.addEventListener('resize', function () {
+				map.resize();
+			});
+		});
 	</script>
 </body>
 
