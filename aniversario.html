@@ -47,8 +47,8 @@
 	</style>
 	<link href="https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css" rel="stylesheet">
 	<script src="https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js"></script>
-  <script type="module" crossorigin src="/assets/index-BRvNxU7S.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Ebz6grTM.css">
+  <script type="module" crossorigin src="/assets/index-SJkzj979.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-8CMQUO2w.css">
 </head>
 
 <body class="bg-gray-900">
@@ -63,13 +63,13 @@
 							<span class="cursor">|</span>
 						</p>
 					</div>
-					<div id="card" class="z-1 relative">
-						<canvas id="pug" class="mx-auto z-2 relative"></canvas>
+					<div id="card">
+						<canvas id="pug" class="mx-auto"></canvas>
 					</div>
 				</div>
 			</section>
 
-			<section class="min-h-screen bg-gray-800">
+			<section class="h-full bg-gray-800">
 				<div class="h-full backdrop z-1 relative">
 					<div class="py-6">
 						<p id="headerTitle" class="text-center announcement text-3xl">
@@ -110,6 +110,7 @@
 									</div>
 								</div>
 								<div class="pb-8">
+									<div id="map" class="rounded-lg h-96"></div>
 									<div class="relative pl-9 pb-4">
 										<dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
 											<dt class="inline font-semibold text-white">
@@ -122,7 +123,6 @@
 											<dd class="inline">Quedamos en Mamba, C. de San Bernardo 53,  al lado del metro Noviciado. Nos vemos a partir de las 20:30</dd>
 										</dl>
 									</div>
-									<div id="map" class="rounded-lg h-96"></div>
 								</div>
 							</div>
 						</div>
@@ -130,7 +130,7 @@
 				</div>
 			</section>
 
-			<section id="last-section" class="min-h-screen max-h-screen bg-gray-900">
+			<section id="last-section" class="min-h-screen max-h-screen bg-gray-900 relative z-50">
 							<div
 								class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
 								<div id="prize-form" class="bg-gray-900 mx-auto max-w-xl pt-48">
