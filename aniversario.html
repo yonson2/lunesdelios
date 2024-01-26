@@ -53,6 +53,17 @@
 		.heading {
 			visibility: hidden;
 		}
+
+		.circle {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 10vh;
+			height: 5vh;
+			clip-path: circle(50% at 50% 100%);
+			overflow: hidden;
+		}
 	</style>
 	<link href="https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css" rel="stylesheet">
 	<link rel="preload" href="images/premio-camiseta.png" as="image">
@@ -60,15 +71,15 @@
 	<link rel="preload" href="images/premio-gorra.png" as="image">
 	<link rel="preload" href="images/nada.png" as="image">
 	<script src="https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js"></script>
-  <script type="module" crossorigin src="/assets/index-5sRT4LEP.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-5AtaJzyH.css">
+  <script type="module" crossorigin src="/assets/index-2usJTHlw.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-d-exQk30.css">
 </head>
 
 <body class="bg-gray-900">
 	<div class="min-h-screen flex items-center justify-center">
 		<!-- max-w-screen-md -->
 		<section class="w-full mx-auto rounded-lg">
-			<section id="main" class="h-screen bg-toast">
+			<section id="main" class="h-screen bg-toast relative overflow-hidden">
 				<div id="header" class="relative z-[1]">
 					<div id="header-first" class="overflow-hidden pt-6 flex justify-center text-center announcement text-7xl">
 						<h1 class="heading">Lunes</h1>
@@ -80,13 +91,14 @@
 						<h1 class="heading">Líos</h1>
 					</div>
 				</div>
-				<div id="card" class="mt-[-196px]">
+				<div id="card" class="mt-[-196px] relative z-[2]">
 					<canvas id="pug" class="mx-auto"></canvas>
 				</div>
+				<div class="circle z-[1] bg-gray-900"></div>
 			</section>
 
 			<section class="h-full bg-gray-800">
-				<div class="h-full backdrop z-1 relative">
+				<div class="h-full backdrop z-[3] relative">
 					<div class="py-6">
 						<p id="headerTitle" class="text-center announcement text-3xl">
 							4+1?
@@ -154,7 +166,7 @@
 				</div>
 			</section>
 
-			<section id="last-section" class="min-h-screen bg-gray-900 relative z-[1]">
+			<section id="last-section" class="min-h-screen bg-gray-900 relative z-[3]">
 				<div
 					class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
 					<div id="prize-form" class="bg-gray-900 mx-auto max-w-xl pt-36 lg:pt-48">
